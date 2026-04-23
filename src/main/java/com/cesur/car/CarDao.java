@@ -26,7 +26,6 @@ public class CarDao {
             }
         }
 
-
         throw new IllegalArgumentException("Car with id: " + carId + " not found");
     }
 
