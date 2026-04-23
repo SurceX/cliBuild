@@ -130,15 +130,8 @@ public class CarBookingService {
     }
 
     public CarBooking bookCar(UUID userId, UUID carId, LocalDate startDate, LocalDate endDate) {
-        User user = userService.findUserById(userId);
-        if (user == null) {
-            throw new IllegalArgumentException("User not found");
-        }
-
-        Car car = carService.findCarById(carId);
-        if (car == null) {
-            throw new IllegalArgumentException("Car not found");
-        }
+        User user = userService.findUserById(userId); // I already create throw function on UserDao class,
+        Car car = carService.findCarById(carId); // I already create throw function on CarDao class
 
         if (startDate.isBefore(LocalDate.now())) {
             throw new IllegalArgumentException("Start date cannot be in the past");

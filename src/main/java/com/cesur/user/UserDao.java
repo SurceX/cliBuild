@@ -23,6 +23,6 @@ public class UserDao {
                 return user;
             }
         }
-        return null;
+        throw new IllegalArgumentException("User id with: " + userId + " not found");
     }
 }
