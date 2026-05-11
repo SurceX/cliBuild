@@ -1,5 +1,5 @@
 package com.cesur.car;
 
 public enum Brand {
-    MERCEDES, AUDI, TESLA, TOYOTA
+    MERCEDES, AUDI, TESLA, TOYOTA, BYD, BENTLEY
 }

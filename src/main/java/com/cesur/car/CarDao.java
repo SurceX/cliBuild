@@ -13,6 +13,8 @@ public class CarDao {
                 new Car(UUID.fromString("22222222-2222-2222-2222-222222222222"), "AUD-2", new BigDecimal("40"), Brand.AUDI, false),
                 new Car(UUID.fromString("33333333-3333-3333-3333-333333333333"), "MER-3", new BigDecimal("100"), Brand.MERCEDES, false),
                 new Car(UUID.fromString("44444444-4444-4444-4444-444444444444"), "TOY-4", new BigDecimal("15"), Brand.TOYOTA, false),
+                new Car(UUID.fromString("55555555-5555-5555-5555-555555555555"), "BYD-5", new BigDecimal("50"), Brand.BYD, true),
+                new Car(UUID.fromString("66666666-6666-6666-6666-666666666666"), "BNTLY-6", new BigDecimal("1000"), Brand.BENTLEY, false),
         };
     }
     public Car[] getCars() {
