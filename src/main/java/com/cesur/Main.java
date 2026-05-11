@@ -42,6 +42,45 @@ public class Main {
                 int option = Integer.parseInt(input);
 
                 switch (option){
+                    case 1:
+                        System.out.print("Enter user id: ");
+                        UUID userId = UUID.fromString(scanner.nextLine());
+
+                        System.out.print("Enter car id: ");
+                        UUID carId = UUID.fromString(scanner.nextLine());
+
+                        System.out.print("Enter start date (yyyy-MM-dd): ");
+                        LocalDate startDate = LocalDate.parse(scanner.nextLine());
+
+                        System.out.print("Enter end date (yyyy-MM-dd): ");
+                        LocalDate endDate = LocalDate.parse(scanner.nextLine());
+
+                        CarBooking newBooking = carBookingService.bookCar(userId, carId, startDate, endDate);
+                        System.out.println("Booking created successfully:");
+                        System.out.println(newBooking);
+
+                        break;
+
+                    case 2:
+                        System.out.print("Enter booking id: ");
+                        UUID bookingId = UUID.fromString(scanner.nextLine());
+
+                        carBookingService.deleteBooking(bookingId);
+                        System.out.println("Booking deleted successfully.");
+
+                        break;
+
+
+                    case 3:
+                        System.out.print("Enter user id: ");
+                        UUID bookingUserId = UUID.fromString(scanner.nextLine());
+
+                        CarBooking[] userBookings = carBookingService.getBookingsByUserId(bookingUserId);
+                        for (CarBooking booking : userBookings) {
+                            System.out.println(booking);
+                        }
+                        break;
+
                     case 4:
                         CarBooking[] bookings = carBookingService.getBookings();
                         for (CarBooking booking : bookings){
