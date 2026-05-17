@@ -38,7 +38,7 @@ public class CarBookingDao {
 
         //  count remaining booking
         for (CarBooking booking : bookings) {
-            if (  !booking.getId().equals(bookingId)) {
+            if ( !booking.getId().equals(bookingId)) {
                 count++;
             }
         }
